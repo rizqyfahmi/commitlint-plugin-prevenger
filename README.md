@@ -18,7 +18,7 @@ npm i commitlint-plugin-prevenger --save-dev
 module.exports = {
   plugins: ["commitlint-plugin-prevenger"],
   rules: {
-    "commitlint-plugin-prevenger/selective-scope": [
+    "commitlint-plugin-prevenger/scope-pattern": [
       2,
       "always",
       ["^core$"]
