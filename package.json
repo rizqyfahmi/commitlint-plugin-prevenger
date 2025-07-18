@@ -1,0 +1,46 @@
+{
+  "name": "commitlint-plugin-prevenger",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "build": "tsc"
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rizqyfahmi/commitlint-plugin-prevenger.git"
+  },
+  "keywords": [
+    "commitlint",
+    "commitlintplugin",
+    "commitlint-plugin"
+  ],
+  "author": "Ahmad Yulia Rizqy Fahmi <https://github.com/rizqyfahmi>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rizqyfahmi/commitlint-plugin-prevenger/issues"
+  },
+  "homepage": "https://github.com/rizqyfahmi/commitlint-plugin-prevenger#readme",
+  "description": "A Commitlint plugin that is containing some toolkits for checking the commit message",
+  "devDependencies": {
+    "@commitlint/types": "^19.8.1",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.3",
+    "@semantic-release/npm": "^12.0.2",
+    "@semantic-release/release-notes-generator": "^14.0.3",
+    "@types/conventional-commits-parser": "^5.0.1",
+    "@types/jest": "^30.0.0",
+    "jest": "^29.7.0",
+    "semantic-release": "^24.2.7",
+    "ts-jest": "^29.4.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}

@@ -1,0 +1,6 @@
+.github/
+src/
+tsconfig.json
+*.test.ts
+*.ts
+*.tsx
