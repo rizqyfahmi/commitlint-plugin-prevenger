@@ -2,6 +2,7 @@
   "name": "commitlint-plugin-prevenger",
   "version": "1.0.2",
   "main": "dist/index.js",
+  "type": "module",
   "scripts": {
     "test": "jest --coverage",
     "build": "tsc"
