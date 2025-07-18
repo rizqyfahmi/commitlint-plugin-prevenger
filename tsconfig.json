@@ -1,13 +1,12 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "node16",
-    "declaration": true, // <-- THIS enables .d.ts files
-    "declarationMap": false,
-    "emitDeclarationOnly": false,
-    "outDir": "dist", // <-- All compiled files go here
+    "target": "ES2019",
+    "module": "CommonJS",
+    "outDir": "dist",
+    "declaration": true,
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true
-  }
+  },
+  "include": ["src"]
 }
