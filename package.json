@@ -2,12 +2,11 @@
   "name": "commitlint-plugin-prevenger",
   "version": "1.0.4",
   "main": "dist/index.js",
-  "type": "module",
   "scripts": {
     "lint": "npx eslint src/ --ext .ts",
     "build": "tsc",
     "test": "jest --coverage",
-    "clean": "rm -rf node_modules package-lock.json dist && npm install"
+    "clean": "rm -rf node_modules && rm package-lock.json && npm cache clean --force && npm install"
   },
   "files": [
     "dist/",
