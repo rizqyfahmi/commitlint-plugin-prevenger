@@ -1,5 +1,9 @@
+import { default as scopePattern } from "./rules/scope-pattern";
+
 const plugin = {
-    rules: {}
+    rules: {
+        'scope-pattern': scopePattern
+    }
 }
 
 export default plugin;
