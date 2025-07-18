@@ -19,43 +19,43 @@ describe('scope-pattern', () => {
         } as Commit
     };
 
-    it('passes when scope matches pattern and "always" is used', () => {
-        const result = ruleFn(createCommit('core'), 'always', ['^core$']);
+    it('passes when scope matches pattern and "always" is used', async () => {
+        const result = await ruleFn(createCommit('core'), 'always', ['^core$']);
         expect(result).toEqual([true, '']);
     });
 
-    it('fails when scope does not match pattern and "always" is used', () => {
-        const result = ruleFn(createCommit('utils'), 'always', ['^core$']);
+    it('fails when scope does not match pattern and "always" is used', async () => {
+        const result = await ruleFn(createCommit('utils'), 'always', ['^core$']);
         expect(result).toEqual([false, 'scope must match pattern: ^core$']);
     });
 
-    it('passes when scope does not match pattern and "never" is used', () => {
-        const result = ruleFn(createCommit('utils'), 'never', ['^core$']);
+    it('passes when scope does not match pattern and "never" is used', async () => {
+        const result = await ruleFn(createCommit('utils'), 'never', ['^core$']);
         expect(result).toEqual([true, '']);
     });
 
-    it('fails when scope matches pattern and "never" is used', () => {
-        const result = ruleFn(createCommit('core'), 'never', ['^core$']);
+    it('fails when scope matches pattern and "never" is used', async () => {
+        const result = await ruleFn(createCommit('core'), 'never', ['^core$']);
         expect(result).toEqual([false, 'scope must not match pattern: ^core$']);
     });
 
-    it('passes when scope is undefined', () => {
-        const result = ruleFn(createCommit(undefined), 'always', ['^core$']);
+    it('passes when scope is undefined', async () => {
+        const result = await ruleFn(createCommit(undefined), 'always', ['^core$']);
         expect(result).toEqual([true, '']);
     });
 
-    it('uses default "when" and "value" when not provided', () => {
-        const result = ruleFn(createCommit('anyscope'));
+    it('uses default "when" and "value" when not provided', async () => {
+        const result = await ruleFn(createCommit('anyscope'));
         expect(result).toEqual([true, '']);
     });
 
-    it('uses default "value" when only "when" is provided', () => {
-        const result = ruleFn(createCommit('anyscope'), 'always');
+    it('uses default "value" when only "when" is provided', async () => {
+        const result = await ruleFn(createCommit('anyscope'), 'always');
         expect(result).toEqual([true, '']);
     });
 
-    it('uses custom message when provided and fails', () => {
-        const result = ruleFn(createCommit('utils'), 'always', ['^core$', 'Custom message']);
+    it('uses custom message when provided and fails', async () => {
+        const result = await ruleFn(createCommit('utils'), 'always', ['^core$', 'Custom message']);
         expect(result).toEqual([false, 'Custom message']);
     });
 });

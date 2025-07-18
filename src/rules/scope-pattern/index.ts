@@ -1,7 +1,7 @@
 import type { Rule } from '@commitlint/types';
 import type { Commit } from 'conventional-commits-parser';
 
-const rule: Rule = (
+const rule: Rule = async (
     parsed: Commit,
     when: 'always' | 'never' = 'always',
     value: [string, string?] = ['']
