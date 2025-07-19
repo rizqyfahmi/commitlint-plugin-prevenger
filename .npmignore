@@ -6,3 +6,4 @@ tsconfig.json
 *.test.d.ts
 *.ts
 *.tsx
+*.tgz

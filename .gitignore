@@ -9,3 +9,6 @@ coverage/
 
 # Lock files
 package-lock.json
+
+# NPM Pack sigstore
+*.tgz
