@@ -1,3 +1,5 @@
+## [1.0.6](https://github.com/rizqyfahmi/commitlint-plugin-prevenger/compare/v1.0.5...v1.0.6) (2025-07-19)
+
 ## [1.0.5](https://github.com/rizqyfahmi/commitlint-plugin-prevenger/compare/v1.0.4...v1.0.5) (2025-07-18)
 
 ## [1.0.4](https://github.com/rizqyfahmi/commitlint-plugin-prevenger/compare/v1.0.3...v1.0.4) (2025-07-18)
