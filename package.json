@@ -24,6 +24,9 @@
   ],
   "author": "Ahmad Yulia Rizqy Fahmi <https://github.com/rizqyfahmi>",
   "license": "MIT",
+  "publishConfig": {
+    "provenance": true
+  },
   "bugs": {
     "url": "https://github.com/rizqyfahmi/commitlint-plugin-prevenger/issues"
   },
