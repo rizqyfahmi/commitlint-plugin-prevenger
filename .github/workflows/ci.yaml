@@ -66,10 +66,16 @@ jobs:
       - name: Build package
         run: npm run build
 
-      - name: Sign package with Sigstore
+      - name: Pack npm package
+        run: npm pack
+
+      - name: List contents (for debugging)
+        run: ls -l
+
+      - name: Sign package
         uses: sigstore/gh-action-sigstore-python@v3.0.1
         with:
-          inputs: dist/*.tgz
+          inputs: "*.tgz"
 
       - name: Run Semantic Release
         env:
