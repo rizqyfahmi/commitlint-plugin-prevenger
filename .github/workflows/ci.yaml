@@ -74,21 +74,11 @@ jobs:
         run: echo "string=${{ steps.app-token.outputs.app-slug }}[bot] <${{ steps.get-user-id.outputs.user-id }}+${{ steps.app-token.outputs.app-slug }}[bot]@users.noreply.github.com>"  >> "$GITHUB_OUTPUT"
       - run: echo "committer string is ${{ steps.committer.outputs.string }}"
 
-      - name: Set global username and email
-        run: |
-          git config --global user.name '${{ steps.app-token.outputs.app-slug }}[bot]'
-          git config --global user.email '${{ steps.get-user-id.outputs.user-id }}+${{ steps.app-token.outputs.app-slug }}[bot]@users.noreply.github.com'
-
-      - name: Debug auth
-        run: |
-          curl -L -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ steps.app-token.outputs.token }}" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/user
-
       - name: Checkout
         uses: actions/checkout@v4
         with:
           token: ${{ steps.app-token.outputs.token }}
           ref: ${{ github.head_ref }}
-          # Make sure the value of GITHUB_TOKEN will not be persisted in repo's config
           persist-credentials: false
 
       - name: Use Node.js
@@ -104,9 +94,6 @@ jobs:
 
       - name: Pack npm package
         run: npm pack
-
-      - name: List contents (for debugging)
-        run: ls -l
 
       - name: Sign package
         uses: sigstore/gh-action-sigstore-python@v3.0.1
