@@ -1,9 +1,8 @@
-// eslint.config.js
-import parser from "@typescript-eslint/parser";
-import eslintPlugin from "@typescript-eslint/eslint-plugin";
-import stylistic from "@stylistic/eslint-plugin"
+const parser = require("@typescript-eslint/parser");
+const eslintPlugin = require("@typescript-eslint/eslint-plugin");
+const stylistic = require("@stylistic/eslint-plugin");
 
-export default [
+const eslintConfig = [
     {
         files: ["**/*.ts", "**/*.tsx"],
         languageOptions: {
@@ -20,7 +19,7 @@ export default [
         },
         rules: {
             ...eslintPlugin.configs.recommended.rules,
-            "@stylistic/comma-spacing": ["error", { "before": false, "after": true }],
+            "@stylistic/comma-spacing": ["error", { before: false, after: true }],
             "@stylistic/indent": ["error", 4],
             "@stylistic/key-spacing": ["error"],
             "@stylistic/space-before-blocks": "error",
@@ -28,9 +27,12 @@ export default [
             "@stylistic/no-multi-spaces": "error",
             "@stylistic/no-trailing-spaces": "error",
             "@stylistic/semi": ["error", "never"],
-            "@stylistic/space-before-function-paren": ["error", {
-                "asyncArrow": "ignore"
-            }],
+            "@stylistic/space-before-function-paren": [
+                "error",
+                { asyncArrow: "ignore" },
+            ],
         },
     },
 ];
+
+module.exports = eslintConfig;
