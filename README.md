@@ -31,3 +31,18 @@ module.exports = {
   }
 }
 ```
+
+## Rules
+
+### `scope-pattern`
+
+Checks the commit scope against a regular expression. Commits without a scope are skipped.
+
+- `"always"`: the scope must match the pattern
+- `"never"`: the scope must not match the pattern
+
+The value is `[pattern, message?]`. When `message` is set, it replaces the default error message.
+
+```javascript
+"commitlint-plugin-prevenger/scope-pattern": [2, "never", ["^wip$", "Do not commit with the wip scope"]]
+```
