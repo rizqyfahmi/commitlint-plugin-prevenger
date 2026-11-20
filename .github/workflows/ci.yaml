@@ -96,7 +96,7 @@ jobs:
         run: npm pack
 
       - name: Sign package
-        uses: sigstore/gh-action-sigstore-python@v3.0.1
+        uses: sigstore/gh-action-sigstore-python@v3.5.0
         with:
           inputs: "*.tgz"
 
