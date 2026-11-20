@@ -1,23 +1,26 @@
-import type { Commit } from "conventional-commits-parser"
+import type { Commit, CommitBase, CommitMeta } from "conventional-commits-parser"
 import type { Rule } from "@commitlint/types"
 import rule from "."
 
 describe("scope-pattern", () => {
     const ruleFn = rule as Rule<[string, string?]>
-    const createCommit = (scope?: string): Commit => {
-        return {
-            type: "feat",
-            scope: scope,
+    // NOTE: Commit is CommitBase & CommitMeta, so the two parts are typed separately and merged
+    const createCommit = (scope?: string): Commit => Object.assign<CommitBase, CommitMeta>(
+        {
             header: `feat(${scope}): some message`,
             body: null,
             footer: null,
             merge: null,
             revert: null,
-            mentions: [] as string[],
-            notes: [] as Commit.Note[],
-            references: [] as Commit.Reference[]
-        } as Commit
-    }
+            mentions: [],
+            notes: [],
+            references: []
+        },
+        {
+            type: "feat",
+            scope: scope ?? null
+        }
+    )
 
     it("passes when scope matches pattern and \"always\" is used", async () => {
         const result = await ruleFn(createCommit("core"), "always", ["^core$"])
